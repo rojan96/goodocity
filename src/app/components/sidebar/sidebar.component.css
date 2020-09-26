@@ -1,0 +1,44 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+}
+
+.main-heading {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00b294;
+}
+
+.sidebar-elements {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.profile-picture {
+  border-radius: 50%;
+  float: left;
+}
+
+.sidebar-element-image {
+  float: left;
+  height: 30px;
+}
+
+.user-profile {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.copyright {
+  font-size: 10px;
+}
