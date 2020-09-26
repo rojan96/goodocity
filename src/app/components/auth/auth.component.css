@@ -6,28 +6,41 @@
 }
 
 .login-component {
+  flex-grow: 4;
   width: 600px;
-  height: 400px;
+  height: 450px;
   border-radius: 10px;
   font-family: "Bitter", serif;
   background-color: #ffffff;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 800px) {
+  .login-component {
+    width: 90%;
+  }
 }
 
 .login-element,
-.login-element-button {
+.login-element-button,
+.auth-element-button {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.login-element-button {
+.auth-element-button {
   height: 100px;
   justify-content: space-between;
+}
+
+.forgot-password {
+  font-size: 15px;
+  margin-top: 5px;
+  color: #00b294;
 }
 
 .login-text {
