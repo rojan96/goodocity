@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { SignupPageComponent } from './pages/auth-page/signup-page/signup-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
     SignupComponent,
     SignupPageComponent,
     DashboardPageComponent,
+    SidebarComponent,
+    NavbarComponent,
+    CardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
