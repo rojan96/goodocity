@@ -1,5 +1,17 @@
 .navbar {
+  overflow: hidden;
   width: auto;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.sticky {
+  top: 0;
+  width: 100%;
+}
+
+.col-8 {
+  padding: 0;
 }
 
 .location-button {

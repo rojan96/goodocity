@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { LoginPageComponent } from './pages/auth-page/login-page/login-page.component';
 import { SignupPageComponent } from './pages/auth-page/signup-page/signup-page.component';
@@ -8,7 +9,15 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 const routes: Routes = [
   {
     path: '',
+    component: DashboardPageComponent,
+  },
+  {
+    path: 'auth',
     component: AuthPageComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardPageComponent,
   },
   {
     path: 'auth/login',
@@ -18,9 +27,10 @@ const routes: Routes = [
     path: 'auth/signup',
     component: SignupPageComponent,
   },
+
   {
-    path: 'dashboard',
-    component: DashboardPageComponent,
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 
