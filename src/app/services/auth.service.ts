@@ -24,7 +24,7 @@ export class AuthService {
           this.userData = data;
           localStorage.setItem('id', this.userData.body.id);
           localStorage.setItem('name', this.userData.body.name);
-          localStorage.setItem('name', this.userData.body.picture);
+          localStorage.setItem('picture', this.userData.body.picture);
           return true;
         } else return false;
       });
