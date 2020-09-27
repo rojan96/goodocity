@@ -19,6 +19,14 @@ export class DataService {
     return this.http.get(this.url + '' + title + '/' + id);
   }
 
+  getEventByCategory(categoryId) {
+    return this.http.get(this.url + '/category/' + categoryId);
+  }
+
+  getCommunityByCategory(categoryId) {
+    return this.http.get(this.url + '/category/' + categoryId);
+  }
+
   create(resource) {
     return this.http.post(this.url, JSON.stringify(resource), {
       observe: 'response',

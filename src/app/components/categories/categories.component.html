@@ -1,0 +1,24 @@
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    View categories
+  </button>
+  <div
+    class="dropdown-menu"
+    class="dropdown-menu"
+    aria-labelled-by="dropdownMenuButton"
+  >
+    <a
+      *ngFor="let category of categories"
+      (click)="newCategory(category.id)"
+      class="dropdown-item"
+      >{{ category.name }}</a
+    >
+  </div>
+</div>
