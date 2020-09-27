@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +15,19 @@ export class DataService {
     if (title == 'profile') title = 'user';
 
     return this.http.get(this.url + '' + title + '/' + id);
+  }
+
+  addParticipantEvent(userId, eventId) {
+    return this.http.get(
+      this.url + 'event/participant/' + eventId + '/' + userId
+    );
+  }
+
+  addMemberCommunity(userId, communityId) {
+    console.log(this.url + 'community/member/' + communityId + '/' + userId);
+    return this.http.get(
+      this.url + 'community/member/' + communityId + '/' + userId
+    );
   }
 
   getEventByCategory(categoryId) {

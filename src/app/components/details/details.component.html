@@ -1,12 +1,33 @@
 <img
+  *ngIf="!data?.username"
   width="100%"
   src="https://images.unsplash.com/photo-1579149840618-c0d5ea3f4d74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
 />
-<!-- Common -->
+<img
+  *ngIf="data.username"
+  src="https://marketplace.canva.com/EADzkaU9XJI/1/0/400w/canva-red-yellow-black-white-wavy-female-woman-girl-teen-portrait-simplified-illustration-square-laptop-sticker-_czOVX8ezRU.jpg"
+/>
 <br />
 <br />
 <br />
+
 <p *ngIf="data.name" class="details-name">{{ data.name }}</p>
+
+<button
+  *ngIf="!data.time && data.description"
+  class="btn btn-secondary"
+  (click)="joinCommunity(data.id)"
+>
+  Join Community
+</button>
+<button
+  *ngIf="data.time"
+  class="btn btn-secondary"
+  (click)="goToEvent(data.id)"
+>
+  Go to the event
+</button>
+
 <p *ngIf="data.id">User Id: {{ data.id }}</p>
 
 <!-- User Info -->
@@ -32,7 +53,9 @@
   {{ data.venue }}
 </p>
 <p *ngIf="data.time">When?<br />{{ data.time.slice(11, 16) }}</p>
-
+<p *ngIf="!data.time && data.description">Who's in the Community?</p>
+<p *ngIf="data.time">Who's coming</p>
+<p>{{ data.participants }}</p>
 <participants
   *ngIf="data.participants"
   [participants]="data.participants"
