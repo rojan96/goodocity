@@ -4,7 +4,7 @@
     <p class="login-text">Connecting you with local social groups.</p>
   </div>
   <div class="login-element-button">
-    <form [formGroup]="login">
+    <form [formGroup]="credentials">
       <div class="form-group">
         <input
           placeholder="Username"
@@ -18,13 +18,16 @@
         <input
           placeholder="Password"
           formControlName="password"
-          type="text"
+          type="password"
           id="password"
           class="form-control"
         />
       </div>
     </form>
-    <button class="btn login-button">Log in</button>
+    <div *ngIf="invalidLogin" class="alert alert-danger">
+      Invalid username and/or password.
+    </div>
+    <button class="btn login-button" (click)="onSubmit()">Log in</button>
     <p class="forgot-password">Forgot Password?</p>
   </div>
 </div>
