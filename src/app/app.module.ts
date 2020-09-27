@@ -15,6 +15,7 @@ import { CommunityService } from './services/community.service';
 import { LoginService } from './services/login.service';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { CategoryService } from './services/category.service';
+import { SearchService } from './services/search.service';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -67,6 +68,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
     DetailService,
     LoginService,
     CategoryService,
+    SearchService,
   ],
   bootstrap: [AppComponent],
 })

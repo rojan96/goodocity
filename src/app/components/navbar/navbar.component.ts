@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { SearchService } from '../../services/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor() {}
+  searchQuery = new FormGroup({
+    search: new FormControl(),
+  });
+  constructor(private service: SearchService, private router: Router) {}
+
+  searchItem() {
+    let keyword = this.searchQuery.get('search').value;
+    console.log(keyword);
+    this.router.navigate(['dashboard/event/search/' + keyword]);
+  }
 }
