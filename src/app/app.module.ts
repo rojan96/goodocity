@@ -12,6 +12,7 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommunityService } from './services/community.service';
+import { LoginService } from './services/login.service';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -53,6 +54,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
     EventService,
     CommunityService,
     DetailService,
+    LoginService,
   ],
   bootstrap: [AppComponent],
 })

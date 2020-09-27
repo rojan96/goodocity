@@ -13,7 +13,8 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent,
+    redirectTo: 'auth/login',
+    pathMatch: 'full',
   },
   {
     path: 'auth',

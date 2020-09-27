@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   active: boolean = false;
-
+  name;
   constructor(public authService: AuthService, public router: Router) {}
+
+  ngOnInit() {
+    this.name = localStorage.getItem('name');
+  }
 
   onClick() {
     this.active = !this.active;

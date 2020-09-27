@@ -1,23 +1,35 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LoginService } from './login.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, service: LoginService) {}
   jwtHelper = new JwtHelperService();
-  token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vc2ggSGFtZWRhbmkiLCJhZG1pbiI6dHJ1ZX0.iy8az1ZDe-_hS8GLDKsQKgPHvWpHl0zkQBqy1QIPOkA';
-
+  url = 'https://goodocity.uc.r.appspot.com/sign_in';
+  userData;
+  isAuthenticated;
   login(credentials) {
-    // return this.http.post('/api/authenticate', JSON.stringify(credentials));
-    if (
-      credentials.get('username').value == 'admin' &&
-      credentials.get('password').value == 'password'
-    ) {
-      localStorage.setItem('token', this.token);
-      return true;
-    } else return false;
+    console.log(credentials.value);
+
+    this.isAuthenticated = this.http
+      .post(this.url, JSON.stringify(credentials.value), {
+        observe: 'response',
+      })
+      .subscribe((data) => {
+        console.log(data);
+        if (data.status == 200) {
+          console.log('trueee');
+          this.userData = data;
+          localStorage.setItem('id', this.userData.body.id);
+          localStorage.setItem('name', this.userData.body.name);
+          return true;
+        } else return false;
+      });
+
+    console.log(this.isAuthenticated);
+    return this.isAuthenticated;
   }
 
   logout() {}
