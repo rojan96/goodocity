@@ -1,20 +1,39 @@
-<img *ngIf="title == 'profile'" src="{{ profileImageUrl }}" />
-<img *ngIf="title == 'community'" src="{{ communityImageUrl }}" />
-<img *ngIf="title == 'event'" src="{{ eventImageUrl }}" />
-<img [src]="image" />
-<!-- Common -- />
-<p>id:{{ data?.id }}</p>
-<p>{{ data?.name }}</p>
+<img
+  width="100%"
+  src="https://images.unsplash.com/photo-1579149840618-c0d5ea3f4d74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+/>
+<!-- Common -->
+<br />
+<br />
+<br />
+<p *ngIf="data.name" class="details-name">{{ data.name }}</p>
+<p *ngIf="data.id">User Id: {{ data.id }}</p>
 
 <!-- User Info -->
-<p>{{ data?.email }}</p>
-<p>{{ data?.username }}</p>
-<p>{{ data?.date_joined?.slice(0, 10) }}</p>
+<p *ngIf="data.email" class="details-email">Email: {{ data.email }}</p>
+<p *ngIf="data.username" class="details-username">@{{ data.username }}</p>
+<p *ngIf="data.date_joined" class="details-date_joined">
+  Member since: {{ data?.date_joined?.slice(0, 10) }}
+</p>
 
 <!-- Event Info -->
-<p>{{ data?.community }}</p>
-<p>{{ data?.categories }}</p>
-<p>{{ data?.description }}</p>
-<p>{{ data?.venue }}</p>
-<p>{{ data?.participants }}</p>
-<p>{{ data?.time?.slice(11, 16) }}</p>
+<p *ngIf="data.community" class="details-community">
+  Community: {{ data.community }}
+</p>
+<p *ngIf="data.categories" class="details-categories">
+  Categories: {{ data.categories }}
+</p>
+<p *ngIf="data.description" class="details-description">
+  What its all about:<br />
+  {{ data.description }}
+</p>
+<p *ngIf="data.venue" class="details-venue">
+  Where?<br />
+  {{ data.venue }}
+</p>
+<p *ngIf="data.time">When?<br />{{ data.time.slice(11, 16) }}</p>
+
+<participants
+  *ngIf="data.participants"
+  [participants]="data.participants"
+></participants>

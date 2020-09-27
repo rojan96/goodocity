@@ -13,9 +13,7 @@
   />
   <div class="card-body" (click)="onClick()">
     <h5 class="card-title">{{ object.name }}</h5>
-    <p class="card-text">
-      {{ object.description }}
-    </p>
+    <p class="card-text">{{ object.description.slice(0, 50) }}...</p>
     <a class="btn" [routerLink]="['/details', content, object.id]"
       >Learn more</a
     >

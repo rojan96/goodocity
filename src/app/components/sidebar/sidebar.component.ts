@@ -10,14 +10,20 @@ import { Router } from '@angular/router';
 export class SidebarComponent {
   active: boolean = false;
   name;
+  id;
   constructor(public authService: AuthService, public router: Router) {}
 
   ngOnInit() {
     this.name = localStorage.getItem('name');
+    this.id = localStorage.getItem('id');
   }
 
   onClick() {
     this.active = !this.active;
+  }
+
+  profile() {
+    console.log();
   }
 
   logout() {

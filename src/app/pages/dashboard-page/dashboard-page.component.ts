@@ -9,4 +9,6 @@ import { Router } from '@angular/router';
 })
 export class DashboardPageComponent {
   constructor(authService: AuthService, router: Router) {}
+
+  ngOnInit() {}
 }

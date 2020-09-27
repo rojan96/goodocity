@@ -30,6 +30,10 @@
   padding-top: 20px;
 }
 
+.sidebar-elements :hover {
+  background-color: #76c2b5;
+}
+
 .sidebar-element {
   width: 100%;
   display: flex;

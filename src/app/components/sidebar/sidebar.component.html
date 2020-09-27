@@ -35,9 +35,17 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <button class="btn">Profile</button>
+            <button
+              class="btn"
+              [routerLink]="['/details/profile', id]"
+              routerLinkActive="active"
+            >
+              Profile
+            </button>
             <button class="btn">Settings</button>
-            <button class="btn" (click)="logout()">Log out</button>
+            <button class="btn" routerLinkActive="active" (click)="logout()">
+              Log out
+            </button>
           </div>
         </div>
       </div>

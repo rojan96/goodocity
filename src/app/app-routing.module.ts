@@ -1,3 +1,4 @@
+import { ToastComponent } from './components/toast/toast.component';
 import { DetailsComponent } from './components/details/details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,7 +14,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
+    redirectTo: '/auth/login',
     pathMatch: 'full',
   },
   {
@@ -64,7 +65,19 @@ const routes: Routes = [
         path: 'community/:id',
         component: DetailsComponent,
       },
+      {
+        path: 'events',
+        redirectTo: '/dashboard/events',
+      },
+      {
+        path: 'communities',
+        redirectTo: '/dashboard/communities',
+      },
     ],
+  },
+  {
+    path: 'toasttest',
+    component: ToastComponent,
   },
   {
     path: '**',
