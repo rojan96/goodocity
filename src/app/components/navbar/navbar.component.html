@@ -1,5 +1,21 @@
 <div class="navbar sticky">
-  <div class="col-8"><input class="form-control" placeholder="Search" /></div>
+  <div class="col-8">
+    <div class="row" [formGroup]="searchQuery">
+      <input
+        class="form-control col-10"
+        placeholder="Search Events"
+        type="text"
+        id="search"
+        formControlName="search"
+      />
+      <button class="btn col" (click)="searchItem()">
+        <img
+          height="30px"
+          src="https://icons-for-free.com/iconfiles/png/512/search-131964753234672616.png"
+        />
+      </button>
+    </div>
+  </div>
   <div class="col">
     <button class="btn location-button">
       <img

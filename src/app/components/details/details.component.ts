@@ -40,14 +40,22 @@ export class DetailsComponent implements OnInit {
   joinCommunity(id) {
     console.log(`User #${this.userId} is joining Community #${id}`);
     this.service.addMemberCommunity(this.userId, id).subscribe((result) => {
+      console.log(result);
       this.successmsg('Successfully Joined Community');
     });
   }
 
   goToEvent(id) {
     console.log(`User #${this.userId} is going to event #${id}`);
-    this.service.addParticipantEvent(this.userId, id).subscribe((result) => {
-      this.successmsg('Successfully added Event');
-    });
+    this.service.addParticipantEvent(this.userId, id).subscribe(
+      (result) => {
+        console.log(result);
+        this.successmsg('Successfully added Event');
+      },
+      (error) => {
+        console.log(error);
+        this.successmsg('Successfully added Event');
+      }
+    );
   }
 }

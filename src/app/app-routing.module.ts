@@ -48,6 +48,10 @@ const routes: Routes = [
         component: EventsComponent,
       },
       {
+        path: 'event/search/:word',
+        component: EventsComponent,
+      },
+      {
         path: 'communities',
         component: CommunitiesComponent,
       },

@@ -11,9 +11,11 @@ export class SidebarComponent {
   active: boolean = false;
   name;
   id;
+  picture;
   constructor(public authService: AuthService, public router: Router) {}
 
   ngOnInit() {
+    this.picture = localStorage.getItem('picture');
     this.name = localStorage.getItem('name');
     this.id = localStorage.getItem('id');
   }
