@@ -13,7 +13,8 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent,
+    redirectTo: '/auth/login',
+    pathMatch: 'full',
   },
   {
     path: 'auth',
@@ -62,6 +63,14 @@ const routes: Routes = [
       {
         path: 'community/:id',
         component: DetailsComponent,
+      },
+      {
+        path: 'events',
+        redirectTo: '/dashboard/events',
+      },
+      {
+        path: 'communities',
+        redirectTo: '/dashboard/communities',
       },
     ],
   },

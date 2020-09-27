@@ -22,6 +22,7 @@ import { EventsComponent } from './components/events/events.component';
 import { CommunitiesComponent } from './components/communities/communities.component';
 import { DetailsComponent } from './components/details/details.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
+import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { DetailsPageComponent } from './pages/details-page/details-page.componen
     CommunitiesComponent,
     DetailsComponent,
     DetailsPageComponent,
+    ComingSoonComponent,
   ],
   imports: [
     BrowserModule,
