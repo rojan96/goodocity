@@ -44,7 +44,15 @@ const routes: Routes = [
         component: EventsComponent,
       },
       {
+        path: 'events/:id',
+        component: EventsComponent,
+      },
+      {
         path: 'communities',
+        component: CommunitiesComponent,
+      },
+      {
+        path: 'communities/:id',
         component: CommunitiesComponent,
       },
     ],

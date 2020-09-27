@@ -1,5 +1,8 @@
 <navbar></navbar>
-<h2>Nearby Events</h2>
+<div class="community-title">
+  <h2>Nearby Events</h2>
+  <categories type="event"></categories>
+</div>
 <div class="row">
   <div class="col-4" *ngFor="let event of events">
     <card-component class="container" [object]="event"></card-component>

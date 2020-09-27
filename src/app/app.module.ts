@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommunityService } from './services/community.service';
 import { LoginService } from './services/login.service';
 import { SignupComponent } from './components/auth/signup/signup.component';
+import { CategoryService } from './services/category.service';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -27,6 +28,7 @@ import { ParticipantsComponent } from './components/participants/participants.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastComponent } from './components/toast/toast.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { ToastComponent } from './components/toast/toast.component';
     DetailsPageComponent,
     ParticipantsComponent,
     ToastComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { ToastComponent } from './components/toast/toast.component';
     CommunityService,
     DetailService,
     LoginService,
+    CategoryService,
   ],
   bootstrap: [AppComponent],
 })
