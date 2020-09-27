@@ -1,10 +1,23 @@
-<div class="card" style="width: 18rem">
-  <img [src]="object.image" class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{{ object.title }}</h5>
+<div class="card">
+  <img
+    *ngIf="object.image"
+    [src]="object.image"
+    class="card-img-top"
+    alt="..."
+  />
+  <img
+    *ngIf="!object.image"
+    [src]="defaultImage"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body" (click)="onClick()">
+    <h5 class="card-title">{{ object.name }}</h5>
     <p class="card-text">
       {{ object.description }}
     </p>
-    <a href="" class="btn">Learn more</a>
+    <a class="btn" [routerLink]="['/details', content, object.id]"
+      >Learn more</a
+    >
   </div>
 </div>

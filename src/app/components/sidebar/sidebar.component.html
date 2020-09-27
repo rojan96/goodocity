@@ -1,6 +1,7 @@
 <div class="sidebar">
   <div class="sidebar-main-container">
     <p class="main-heading">Goodocity</p>
+    <p class="heading-text">What good are you going to do today?</p>
     <div *ngIf="!authService.isLoggedIn">Login or Signup</div>
     <div class="accordion" id="accordionExample" *ngIf="authService.isLoggedIn">
       <div class="card">
@@ -21,7 +22,7 @@
                 height="30px"
               />
 
-              <p>Miguel Soto</p>
+              <p style="width: 200px">Miguel Soto</p>
             </div>
           </h2>
         </div>
@@ -43,7 +44,7 @@
     </div>
 
     <div class="sidebar-elements">
-      <button class="btn sidebar-element" routerLink="events">
+      <button class="btn" routerLink="events">
         <img
           class="sidebar-element-image"
           src="https://www.iconfinder.com/data/icons/small-n-flat/24/calendar-512.png"

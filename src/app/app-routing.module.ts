@@ -1,3 +1,4 @@
+import { DetailsComponent } from './components/details/details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './components/auth/auth.component';
@@ -7,6 +8,7 @@ import { EventsComponent } from './components/events/events.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { DetailsPageComponent } from './pages/details-page/details-page.component';
 
 const routes: Routes = [
   {
@@ -42,6 +44,24 @@ const routes: Routes = [
       {
         path: 'communities',
         component: CommunitiesComponent,
+      },
+    ],
+  },
+  {
+    path: 'details',
+    component: DetailsPageComponent,
+    children: [
+      {
+        path: 'profile/:id',
+        component: DetailsComponent,
+      },
+      {
+        path: 'event/:id',
+        component: DetailsComponent,
+      },
+      {
+        path: 'community/:id',
+        component: DetailsComponent,
       },
     ],
   },

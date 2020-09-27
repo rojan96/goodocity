@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-events',
@@ -6,63 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events.component.css'],
 })
 export class EventsComponent implements OnInit {
-  events = [
-    {
-      title: 'Recycling',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutoring',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaning',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Recycling',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutoring',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaning',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Recycling',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutoring',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaning',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-  ];
-  constructor() {}
+  events;
+  constructor(private service: EventService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.service.getAll().subscribe((data) => {
+      this.events = data;
+      console.log(data);
+    });
+  }
 }

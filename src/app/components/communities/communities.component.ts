@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommunityService } from '../../services/community.service';
 
 @Component({
   selector: 'app-communities',
@@ -6,63 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./communities.component.css'],
 })
 export class CommunitiesComponent implements OnInit {
-  communities = [
-    {
-      title: 'Recyclers',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutors',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaners',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Recycling',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutoring',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaning',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Recycling',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Tutoring',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-    {
-      title: 'Cleaning',
-      image:
-        'https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      description: 'People going to recycle',
-    },
-  ];
-  constructor() {}
+  communities;
+  constructor(private service: CommunityService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.service.getAll().subscribe((data) => {
+      this.communities = data;
+      console.log(data);
+    });
+  }
 }
