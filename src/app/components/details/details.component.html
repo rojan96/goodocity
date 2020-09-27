@@ -1,0 +1,20 @@
+<img *ngIf="title == 'profile'" src="{{ profileImageUrl }}" />
+<img *ngIf="title == 'community'" src="{{ communityImageUrl }}" />
+<img *ngIf="title == 'event'" src="{{ eventImageUrl }}" />
+
+<!-- Common -->
+<p>id:{{ data?.id }}</p>
+<p>{{ data?.name }}</p>
+
+<!-- User Info -->
+<p>{{ data?.email }}</p>
+<p>{{ data?.username }}</p>
+<p>{{ data?.date_joined?.slice(0, 10) }}</p>
+
+<!-- Event Info -->
+<p>{{ data?.community }}</p>
+<p>{{ data?.categories }}</p>
+<p>{{ data?.description }}</p>
+<p>{{ data?.venue }}</p>
+<p>{{ data?.participants }}</p>
+<p>{{ data?.time?.slice(11, 16) }}</p>

@@ -1,24 +1,57 @@
 <div class="sidebar">
   <div class="sidebar-main-container">
     <p class="main-heading">Goodocity</p>
-    <button class="user-profile btn">
-      <img
-        class="profile-picture"
-        src="https://marketplace.canva.com/EADzkaU9XJI/1/0/400w/canva-red-yellow-black-white-wavy-female-woman-girl-teen-portrait-simplified-illustration-square-laptop-sticker-_czOVX8ezRU.jpg"
-        height="30px"
-      />
+    <p class="heading-text">What good are you going to do today?</p>
+    <div *ngIf="!authService.isLoggedIn">Login or Signup</div>
+    <div class="accordion" id="accordionExample" *ngIf="authService.isLoggedIn">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <div
+              class="btn"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+              (click)="onClick()"
+            >
+              <img
+                class="profile-picture"
+                src="https://marketplace.canva.com/EADzkaU9XJI/1/0/400w/canva-red-yellow-black-white-wavy-female-woman-girl-teen-portrait-simplified-illustration-square-laptop-sticker-_czOVX8ezRU.jpg"
+                height="30px"
+              />
 
-      <p>Miguel Soto</p>
-    </button>
+              <p style="width: 200px">Miguel Soto</p>
+            </div>
+          </h2>
+        </div>
+
+        <div
+          id="collapseOne"
+          class="collapse"
+          [class.show]="active"
+          aria-labelledby="headingOne"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <button class="btn">Profile</button>
+            <button class="btn">Settings</button>
+            <button class="btn" (click)="logout()">Log out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="sidebar-elements">
-      <button class="btn">
+      <button class="btn" routerLink="events">
         <img
           class="sidebar-element-image"
           src="https://www.iconfinder.com/data/icons/small-n-flat/24/calendar-512.png"
         />
         <p>Events</p>
       </button>
-      <button class="btn">
+      <button class="btn" routerLink="communities">
         <img
           class="sidebar-element-image"
           src="https://static.thenounproject.com/png/888747-200.png"
