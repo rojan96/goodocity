@@ -12,6 +12,7 @@ export class DetailsComponent implements OnInit {
   data;
   id;
   title;
+  image;
 
   profileImageUrl =
     'https://marketplace.canva.com/EADzkaU9XJI/1/0/400w/canva-red-yellow-black-white-wavy-female-woman-girl-teen-portrait-simplified-illustration-square-laptop-sticker-_czOVX8ezRU.jpg';
@@ -30,6 +31,9 @@ export class DetailsComponent implements OnInit {
       .subscribe((detail) => {
         this.data = detail;
         console.log(this.data);
+        if (this.title == 'profile') this.image = this.profileImageUrl;
+        if (this.title == 'event') this.image = this.eventImageUrl;
+        if (this.title == 'community') this.image = this.communityImageUrl;
       });
   }
 }

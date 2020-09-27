@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="sidebar-main-container">
-    <p class="main-heading">Goodocity</p>
+    <p class="main-heading" routerLink="/dashboard/events">Goodocity</p>
     <p class="heading-text">What good are you going to do today?</p>
     <div *ngIf="!authService.isLoggedIn">Login or Signup</div>
     <div class="accordion" id="accordionExample" *ngIf="authService.isLoggedIn">
@@ -22,7 +22,7 @@
                 height="30px"
               />
 
-              <p style="width: 200px">Miguel Soto</p>
+              <p style="width: 200px">{{ name }}</p>
             </div>
           </h2>
         </div>

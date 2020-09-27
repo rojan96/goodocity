@@ -14,15 +14,21 @@ export class LoginComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  ngOnInit() {
+    localStorage.clear();
+  }
+
   credentials = new FormGroup({
-    username: new FormControl(),
+    email: new FormControl(),
     password: new FormControl(),
   });
 
   onSubmit() {
     this.isAuthenticated = this.authService.login(this.credentials);
-    if (this.isAuthenticated) {
-      this.router.navigate(['/']);
-    } else this.invalidLogin = true;
+    setTimeout(() => {
+      if (localStorage.getItem('id')) {
+        this.router.navigate(['/dashboard/events']);
+      } else this.invalidLogin = true;
+    }, 1000);
   }
 }

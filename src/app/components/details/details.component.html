@@ -1,8 +1,8 @@
 <img *ngIf="title == 'profile'" src="{{ profileImageUrl }}" />
 <img *ngIf="title == 'community'" src="{{ communityImageUrl }}" />
 <img *ngIf="title == 'event'" src="{{ eventImageUrl }}" />
-
-<!-- Common -->
+<img [src]="image" />
+<!-- Common -- />
 <p>id:{{ data?.id }}</p>
 <p>{{ data?.name }}</p>
 
